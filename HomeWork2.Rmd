@@ -7,9 +7,16 @@ output: pdf_document
 
 # Stat 587 Homework 2
 
+---
 ##  Question 1. The authors of a scientific article wrote, “Sixteen rats weighing 150 $\pm$ 10 g were injected...”. 150 g seems to be the average weight of the 16 rats in the sample. The 10 g figure is a little ambiguous and could be interpreted in several different ways.
 
-* 1
+* 1  If the authors wished to directly convey information about the variation among the weights of the sixteen rats in the sample, should 10 g represent the sample standard deviation or the standard error of the sample average?
+
+- **Answer** *It is the Standard deviation (SD) of this sample.* Standard error(SE) represents the distribution of samples. It is from mean values of samples. In this case, 16 rats belong to one sample.
+
+* 2  Suppose 10 g really represented the standard error of the sample average. What must have been the sample standard deviation of the 16 rats?
+
+- **Answer** $SE =$ \frac{$\sigma$}{\sqrt{n}}
 
 
 
