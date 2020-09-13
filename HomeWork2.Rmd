@@ -5,44 +5,44 @@ date: "9/12/2020"
 output:
   html_document:
     df_print: paged
+---   
+# Script of HW2
+
+## Question 2-(c)
+```{r}
+
+x <- -0.538
+mu <- -0.545
+sstd <- 0.008
+n <- 15
+t <- (x-mu)/(sstd/sqrt(n))
+
+p<-1-(pt(t,df=14))
+p
+
+rm(list = ls())
+```
 ---
+## Question3
+```{r}
 
-# Stat 587 Homework 2
+df <- read.table("https://raw.githubusercontent.com/Kakashi-sensei/STAT_587_2020_fall_Assignment2/master/radon.txt", header=TRUE)
+library(ggplot2)
+#Draw a box plot of the radon concentrations and describe (briefly) the shape of the distribution. Include the figure in your report
+boxplot(df$radon, main="Box Plot", ylab="Radon")
 
----
-##  Question 1. The authors of a scientific article wrote, “Sixteen rats weighing 150 $\pm$ 10 g were injected...”. 150 g seems to be the average weight of the 16 rats in the sample. The 10 g figure is a little ambiguous and could be interpreted in several different ways.
+summary(df$radon)
 
-* 1  If the authors wished to directly convey information about the variation among the weights of the sixteen rats in the sample, should 10 g represent the sample standard deviation or the standard error of the sample average?
+#Calculate the standard error of mean radon concentration of owner-occupied houses in Ramsey county
+if (!require("psych"))install.packages("psych")
+library(psych)
 
-- **Answer** *It is the Standard deviation (SD) of this sample.* Standard error(SE) represents the distribution of samples. It is from mean values of samples. In this case, 16 rats belong to one sample.
-
-* 2  Suppose 10 g really represented the standard error of the sample average. What must have been the sample standard deviation of the 16 rats?
-
-- **Answer** $SE =$ \frac{$\sigma$}{\sqrt{n}}
+ds<-describe(df$radon)
+write.csv(ds,"c://Users//46554//github//R//STAT587_2020_fall//STAT_587_2020_fall_Assignment2/sum4-c.csv")
 
 
 
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
